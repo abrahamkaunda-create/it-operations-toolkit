@@ -14,12 +14,6 @@ from toolkit.ticket_priority import (
 )
 
 
-st.set_page_config(
-    page_title="Support Ticket Prioritiser",
-    page_icon="🎫",
-    layout="wide",
-)
-
 st.title("Support Ticket Prioritiser")
 st.write(
     "Use four documented factors to produce a transparent demonstrative "

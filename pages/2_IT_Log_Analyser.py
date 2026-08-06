@@ -14,12 +14,6 @@ MAX_UPLOAD_BYTES = 1_000_000
 MAX_DISPLAY_ENTRIES = 500
 
 
-st.set_page_config(
-    page_title="IT Log Analyser",
-    page_icon="📋",
-    layout="wide",
-)
-
 st.title("IT Log Analyser")
 st.write(
     "Summarise a plain-text technical log, count severity levels, extract "

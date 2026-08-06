@@ -5,12 +5,6 @@ import streamlit as st
 from toolkit import SubnetInputError, analyse_subnet
 
 
-st.set_page_config(
-    page_title="Network Subnet Calculator",
-    page_icon="🌐",
-    layout="wide",
-)
-
 st.title("Network Subnet Calculator")
 st.write(
     "Calculate the key details of an IPv4 network from an address and CIDR prefix. "
@@ -48,10 +42,15 @@ if calculate:
 
         st.subheader("Network details")
         network_column, broadcast_column, mask_column = st.columns(3)
-
-        network_column.metric("Network address", result.network_address)
-        broadcast_column.metric("Broadcast address", result.broadcast_address)
-        mask_column.metric("Subnet mask", result.subnet_mask)
+        address_values = (
+            (network_column, "Network address", result.network_address),
+            (broadcast_column, "Broadcast address", result.broadcast_address),
+            (mask_column, "Subnet mask", result.subnet_mask),
+        )
+        for column, label, value in address_values:
+            with column:
+                st.caption(label)
+                st.code(value, language=None)
 
         count_column, usable_column, prefix_column = st.columns(3)
         count_column.metric("Total addresses", f"{result.total_addresses:,}")
@@ -60,8 +59,12 @@ if calculate:
 
         st.subheader("Usable host range")
         first_host_column, last_host_column = st.columns(2)
-        first_host_column.metric("First usable host", result.first_usable_host)
-        last_host_column.metric("Last usable host", result.last_usable_host)
+        with first_host_column:
+            st.caption("First usable host")
+            st.code(result.first_usable_host, language=None)
+        with last_host_column:
+            st.caption("Last usable host")
+            st.code(result.last_usable_host, language=None)
 
         st.subheader("Address classification")
         st.info(f"{result.entered_address} is classified as **{result.classification}**.")
