@@ -1,0 +1,18 @@
+2026-08-06 08:00:01 INFO auth-service Successful login from 192.168.10.25
+2026-08-06 08:01:12 DEBUG dns-service Query from 192.168.10.25 to 192.168.10.2
+2026-08-06 08:03:47 WARNING storage-service Disk usage reached 85 percent
+2026-08-06 08:05:03 ERROR backup-service Connection to 10.20.0.15 failed
+2026-08-06 08:06:10 INFO backup-service Retrying backup operation
+2026-08-06 08:07:44 INFO backup-service Backup completed successfully
+2026-08-06 08:10:18 WARN dhcp-service Address pool 192.168.10.0 is nearing capacity
+2026-08-06 08:12:39 NOTICE auth-service Account locked after repeated failures from 192.168.10.44
+2026-08-06 08:15:21 ERROR auth-service Failed login from 198.51.100.23
+2026-08-06 08:18:09 CRITICAL network-service Core switch 10.0.0.1 is unreachable
+2026-08-06 08:19:32 INFO network-service Connectivity to 10.0.0.1 restored
+2026-08-06 08:22:14 DEBUG monitor-service CPU usage sample recorded
+2026-08-06 08:25:05 INFO patch-service Update deployed to 192.168.20.15
+2026-08-06 08:28:42 ERROR application-service Request to 10.30.0.8 timed out
+2026-08-06 08:31:00 FATAL database-service Connection pool exhausted on 10.30.0.20
+2026-08-06 08:34:16 WARNING application-service Response time exceeded threshold
+2026-08-06 08:38:27 INFO helpdesk-service Ticket INC-1042 marked as resolved
+2026-08-06 08:40:00 healthcheck completed without a recognised severity label
